@@ -32,6 +32,7 @@ document.getElementById('validationForm').addEventListener('submit', function(ev
         document.getElementById('resultMessage').classList.add('error');
     } finally {
         // TODO: Add console debugging for 'Validation attempt finished.'
+        console.log('Validation finished');
     }
 });
 
