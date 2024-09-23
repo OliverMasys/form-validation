@@ -39,13 +39,16 @@ document.getElementById('validationForm').addEventListener('submit', function(ev
 // Function: Clear Previous Error Messages
 function clearErrors() {
     // TODO: Add console debugging for 'Clearing error messages'
+    console.log('Clearing error message');
     // Clear error from nameError on form
     document.getElementById('nameError').textContent = '';
     // TODO: Clear error from emailError on form
+    document.getElementById('emailError').textContent = '';
     
     // TODO: Clear error from passwordError on form
-
+    document.getElementById('passwordError').textContent = '';
     // TODO: Clear error from confirmPasswordError on form
+    document.getElementById('confirmPasswordError').textContent = '';
 }
 
 // Function: Validate Form Data
@@ -53,10 +56,13 @@ function validateForm() {
     // Assign input values to variables
     const name = document.getElementById('name').value;
     // TODO: Assign value to email variable
+    const email = document.getElementById('email').value;
 
     // TODO: Assign value to password variable
+    const password = document.getElementById('password').value;
 
     // TODO: Assign value to confirmPassword variable
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
     console.log('Validating form', { name, email, password, confirmPassword }); // Console debugging with multiple values
 
@@ -66,15 +72,24 @@ function validateForm() {
     }
 
     // TODO: Validate email field using validateEmail function and throw error if invalid
+    if (!validateEmail(email)) {
+        throw new Error('Invalid email format');
+    }
 
     // TODO: Validate password length and throw error if less than 8 characters
-
+    if (password.length < 8) {
+        throw new Error('Password must be at least 8 charactors long');
+    }
     // TODO: Validate if password and confirmPassword match and throw error if they do not
+    if (password !== confirmPassword) {
+        throw new Error('Passwords do not match');
+    }
 }
 
 // Function: Custom Email Validation
 function validateEmail(email) {
     // TODO: Add console debugging for 'Validating email:' and the email value
+    console.log('Validating email:', email);
     // Regular expression to check email format
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -83,6 +98,7 @@ function validateEmail(email) {
 // Function: Display Validation Errors
 function handleValidationError(error) {
     // TODO: Add console debugging for 'Handling validation error:' and the error message
+    console.log;
     // Display specific error messages
     switch (error.message) {
         case 'Name is required':
