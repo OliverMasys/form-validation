@@ -120,6 +120,6 @@ function handleValidationError(error) {
 
         default:
             // TODO: Add console.error() debugging for 'Unknown validation error:' and the error value
-            console,error('Unknown valudation error', error);
+            console.error('Unknown valudation error', error);
     }
 }
