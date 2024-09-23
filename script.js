@@ -98,19 +98,28 @@ function validateEmail(email) {
 // Function: Display Validation Errors
 function handleValidationError(error) {
     // TODO: Add console debugging for 'Handling validation error:' and the error message
-    console.log;
+    console.log('Handling validation error:', error.message);
     // Display specific error messages
     switch (error.message) {
         case 'Name is required':
             document.getElementById('nameError').textContent = error.message;
             break;
         // TODO: Add case for 'Invalid email format' error
+        case 'Name is required':
+            document.getElementById('nameError').textContent = error.message;
+            break;
 
         // TODO: Add case for 'Password must be at least 8 characters long' error
+        case 'Name is required':
+            document.getElementById('nameError').textContent = error.message;
+            break;
 
-        // TODO: Add case for 'Passwords do not match' error
+        // TODO: Add case for 'Passwords do not match' errorcase 'Name is required':
+            document.getElementById('nameError').textContent = error.message;
+            break;
 
         default:
             // TODO: Add console.error() debugging for 'Unknown validation error:' and the error value
+            console,error('Unknown valudation error', error);
     }
 }
