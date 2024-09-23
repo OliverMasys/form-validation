@@ -111,11 +111,11 @@ function handleValidationError(error) {
 
         // TODO: Add case for 'Password must be at least 8 characters long' error
         case 'Name is required':
-            document.getElementById('nameError').textContent = error.message;
+            document.getElementById('passwordError').textContent = error.message;
             break;
 
         // TODO: Add case for 'Passwords do not match' errorcase 'Name is required':
-            document.getElementById('nameError').textContent = error.message;
+            document.getElementById('confirmPasswordError').textContent = error.message;
             break;
 
         default:
